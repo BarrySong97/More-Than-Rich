@@ -1,9 +1,16 @@
 import styles from './index.less';
+import { Layout } from 'antd';
 
+const { Header, Footer, Sider, Content } = Layout;
 export default function IndexPage() {
   return (
-    <div>
-      <h1 className={styles.title}>Page index</h1>
-    </div>
+    <Layout>
+      <Sider>Sider</Sider>
+      <Layout>
+        <Header>Header</Header>
+        <Content>Content</Content>
+        <Footer>Footer</Footer>
+      </Layout>
+    </Layout>
   );
 }
