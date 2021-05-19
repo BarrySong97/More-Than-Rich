@@ -47,7 +47,11 @@ const LoginForm: FC<LoginFormProps> = (props) => {
             name="password"
             rules={[{ required: true, message: '请输入密码！' }]}
           >
-            <Input.Password size="large" className={styles.inputItem} />
+            <Input.Password
+              placeholder="********"
+              size="large"
+              className={styles.inputItem}
+            />
           </Form.Item>
 
           <Form.Item>

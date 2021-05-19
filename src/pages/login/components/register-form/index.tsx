@@ -8,23 +8,13 @@ export interface RegisterFormProps {}
 
 const RegisterForm: FC<RegisterFormProps> = (props) => {
   return (
-    <div className={styles.loginForm}>
+    <div className={styles.registerForm}>
       <div style={{ width: '60%' }}>
         <div>
           <Title>注册</Title>
           <Paragraph>更好，更高效的记账软件</Paragraph>
         </div>
-        <div className={styles.wechat}>
-          <Button
-            className={styles.wecharBtn}
-            shape="round"
-            icon={<WechatOutlined style={{ color: 'green' }} />}
-            size="large"
-          >
-            微信登录
-          </Button>
-        </div>
-        <Divider orientation="center">使用邮箱登录</Divider>
+
         <Form
           layout="vertical"
           name="basic"
@@ -48,17 +38,22 @@ const RegisterForm: FC<RegisterFormProps> = (props) => {
             name="password"
             rules={[{ required: true, message: '请输入密码！' }]}
           >
-            <Input.Password size="large" className={styles.inputItem} />
+            <Input.Password
+              placeholder="********"
+              size="large"
+              className={styles.inputItem}
+            />
           </Form.Item>
-
-          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>记住我</Checkbox>
-            </Form.Item>
-
-            <a href="" className={styles.loginFormForgot}>
-              忘记密码
-            </a>
+          <Form.Item
+            label="确认密码"
+            name="rePassword"
+            rules={[{ required: true, message: '请输入密码！' }]}
+          >
+            <Input.Password
+              placeholder="********"
+              size="large"
+              className={styles.inputItem}
+            />
           </Form.Item>
 
           <Form.Item style={{ marginBottom: 0 }}>
@@ -69,7 +64,7 @@ const RegisterForm: FC<RegisterFormProps> = (props) => {
               shape="round"
               htmlType="submit"
             >
-              登录
+              注册
             </Button>
           </Form.Item>
         </Form>

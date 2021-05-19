@@ -9,9 +9,27 @@ const Login: FC = () => {
   const [state, setState] = useState<'login' | 'register'>('login');
   return (
     <div className={styles.PageContainer}>
-      <div className={styles.loginBox}>
-        {state === 'login' ? <LoginForm /> : <RegisterForm />}
-        <div>123</div>
+      <div className={styles.box}>
+        <div className={styles.form}>
+          {state === 'login' ? (
+            <>
+              <LoginForm />
+              <div className={styles.register}>
+                没有账号? &nbsp;
+                <a onClick={() => setState('register')}>注册一个账号🎉</a>
+              </div>
+            </>
+          ) : (
+            <>
+              <RegisterForm />
+              <div className={styles.register}>
+                已有账号? &nbsp;
+                <a onClick={() => setState('login')}>点击登录🎉</a>
+              </div>
+            </>
+          )}
+        </div>
+
         <div className={styles.loginImgContainer}>
           <Carousel autoplay>
             <div>
