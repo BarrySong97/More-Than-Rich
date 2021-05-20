@@ -14,7 +14,6 @@ const MtrLayout: FC<Props> = (props) => {
     return <Login></Login>;
   }
   const [collapsed, { toggle: toggleCollapsed }] = useToggle();
-  console.log(collapsed);
 
   return (
     <Layout>

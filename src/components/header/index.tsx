@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { Layout, Menu, Typography } from 'antd';
 import styles from './index.less';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import useRouteTitle from '@/utils/hooks/useRouteTitle';
+
 const { Title, Paragraph } = Typography;
 const { Header } = Layout;
 export interface HeaderProps {
@@ -11,7 +13,7 @@ export interface HeaderProps {
 
 const LayoutHeader: FC<HeaderProps> = (props) => {
   const { collapsed, toggle } = props;
-
+  const cnTitle = useRouteTitle();
   return (
     <Header className={styles.header} style={{ padding: 0 }}>
       {collapsed ? (
@@ -24,8 +26,8 @@ const LayoutHeader: FC<HeaderProps> = (props) => {
       )}
 
       <div className={styles.floatTitle}>
-        <Title level={2} style={{ margin: 0 }}>
-          Title
+        <Title level={3} style={{ margin: 0 }}>
+          {cnTitle}
         </Title>
       </div>
     </Header>

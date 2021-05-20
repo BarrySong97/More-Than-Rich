@@ -1,24 +1,16 @@
 import React, { FC } from 'react';
 import styles from './index.less';
-import { Divider, Layout, Menu, Typography } from 'antd';
+import { Layout, Menu, Typography } from 'antd';
 import {
-  AppstoreFilled,
-  BankFilled,
   BarChartOutlined,
   DashboardOutlined,
-  LineChartOutlined,
-  PieChartFilled,
   RiseOutlined,
-  SettingFilled,
   SettingOutlined,
   SwitcherOutlined,
   TagOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  WalletFilled,
   WalletOutlined,
 } from '@ant-design/icons';
+import { Link } from 'umi';
 const { Text } = Typography;
 const { Sider } = Layout;
 interface SiderProps {
@@ -30,7 +22,7 @@ const LayoutSider: FC<SiderProps> = (props) => {
   return (
     <Sider className={styles.sideer} theme="light" collapsed={collapsed}>
       <div className={styles.logo}>more</div>
-      <Menu mode="inline" defaultSelectedKeys={['4']}>
+      <Menu mode="inline" defaultSelectedKeys={['1']}>
         {!collapsed ? (
           <div className={styles.divider}>
             <Text type="secondary">个人</Text>
@@ -38,16 +30,16 @@ const LayoutSider: FC<SiderProps> = (props) => {
         ) : null}
 
         <Menu.Item key="1" icon={<DashboardOutlined />}>
-          个人中心
+          <Link to="/user-center">个人中心</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<BarChartOutlined />}>
-          图表
+          <Link to="/charts">图表</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<WalletOutlined />}>
-          钱包
+          <Link to="/wallet">钱包</Link>
         </Menu.Item>
         <Menu.Item key="5" icon={<RiseOutlined />}>
-          投资
+          <Link to="/invesment">投资</Link>
         </Menu.Item>
         {!collapsed ? (
           <div className={styles.divider}>
@@ -55,13 +47,13 @@ const LayoutSider: FC<SiderProps> = (props) => {
           </div>
         ) : null}
         <Menu.Item key="7" icon={<TagOutlined />}>
-          Tag管理
+          <Link to="/tag-manage">Tag管理</Link>
         </Menu.Item>
         <Menu.Item key="8" icon={<SwitcherOutlined />}>
-          分类管理
+          <Link to="/category-manage">分类管理</Link>
         </Menu.Item>
         <Menu.Item key="6" icon={<SettingOutlined />}>
-          设置
+          <Link to="/setting">设置</Link>
         </Menu.Item>
       </Menu>
     </Sider>
