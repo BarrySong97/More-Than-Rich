@@ -3,5 +3,5 @@ import { Layout } from 'antd';
 import { useEffect, useState } from 'react';
 
 export default function IndexPage() {
-  return <div></div>;
+  return <div>123</div>;
 }
