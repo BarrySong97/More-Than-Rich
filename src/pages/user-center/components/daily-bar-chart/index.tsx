@@ -1,9 +1,14 @@
 import React, { FC } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
-interface DailyBarChartProps {}
+import styles from './index.less';
+import classnames from 'classnames';
+interface DailyBarChartProps {
+  className?: string;
+}
 
 const DailyBarChart: FC<DailyBarChartProps> = (props) => {
+  const { className } = props;
   const option = {
     backgroundColor: '#fff',
     grid: {
@@ -16,13 +21,40 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
       {
         type: 'category',
         color: '#59588D',
-        data: ['2019Q1', '2019Q2', '2019Q3', '2019Q4'],
+        data: [
+          '2021-10-01',
+          '2021-10-02',
+          '2021-10-03',
+          '2021-10-04',
+          '2021-10-05',
+          '2021-10-06',
+          '2021-10-07',
+          '2021-10-08',
+          '2021-10-09',
+          '2021-10-15',
+          '2021-10-11',
+          '2021-10-12',
+          '2021-10-13',
+          '2021-10-14',
+          '2021-10-15',
+          '2021-10-14',
+          '2021-10-42',
+          '2021-10-33',
+          '2021-10-44',
+          '2021-10-45',
+          '2021-10-41',
+          '2021-10-52',
+          '2021-10-53',
+          '2021-10-64',
+          '2021-10-65',
+          '2021-10-61',
+          '2021-10-22',
+          '2021-10-33',
+          '2021-10-14',
+          '2021-10-25',
+        ],
         axisLabel: {
-          margin: 20,
-          color: '#999',
-          textStyle: {
-            fontSize: 18,
-          },
+          show: false,
         },
         axisLine: {
           lineStyle: {
@@ -37,10 +69,9 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
     yAxis: [
       {
         axisLabel: {
-          formatter: '{value}%',
           color: '#999',
           textStyle: {
-            fontSize: 18,
+            fontSize: 12,
           },
         },
         axisLine: {
@@ -52,23 +83,23 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
           show: false,
         },
         splitLine: {
-          lineStyle: {
-            color: 'rgba(131,101,101,0.2)',
-            type: 'dashed',
-          },
+          show: false,
         },
       },
     ],
     series: [
       {
         type: 'bar',
-        data: [40, 80, 20],
-        barWidth: '20px',
+        data: [
+          40, 80, 20, 21, 40, 40, 12, 43, 12, 32, 40, 80, 20, 21, 40, 40, 12,
+          43, 12, 32, 40, 80, 20, 21, 40, 40, 12, 43, 12, 32,
+        ],
+        barWidth: '10px',
         itemStyle: {
           normal: {
             color: function (params: any) {
               //展示正值的柱子，负数设为透明
-              let colorArr = ['#89f7fe', '#66a6ff'];
+              let colorArr = ['#66a6ff', '#89f7fe'];
               return new echarts.graphic.LinearGradient(
                 0,
                 0,
@@ -91,18 +122,14 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
         },
         label: {
           normal: {
-            show: true,
-            fontSize: 18,
-            fontWeight: 'bold',
-            color: '#333',
-            position: 'top',
+            show: false,
           },
         },
       },
     ],
   };
   return (
-    <div>
+    <div className={classnames(className)}>
       <ReactECharts option={option} />
     </div>
   );
