@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import IconInfoCard from '@/components/icon-info-card';
 import { MoneyCollectOutlined } from '@ant-design/icons';
 import { Col, Row } from 'antd';
+import AddEntryFormProps from '../add-entry-form';
 export interface InfoProps {
   className?: string;
 }
@@ -14,7 +15,7 @@ const Info: FC<InfoProps> = (props) => {
 
   return (
     <div className={classnames(className, styles.info)}>
-      <Row gutter={[24, 24]}>
+      <Row gutter={[24, 18]}>
         <Col span={12}>
           <IconInfoCard
             label="存款"
@@ -54,6 +55,9 @@ const Info: FC<InfoProps> = (props) => {
             }
             icon={<MoneyCollectOutlined />}
           />
+        </Col>
+        <Col span={24}>
+          <AddEntryFormProps />
         </Col>
       </Row>
     </div>
