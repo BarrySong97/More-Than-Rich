@@ -11,12 +11,7 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
   const { className } = props;
   const option = {
     backgroundColor: '#fff',
-    grid: {
-      top: '15%',
-      right: '10%',
-      left: '10%',
-      bottom: '12%',
-    },
+
     xAxis: [
       {
         type: 'category',
@@ -61,6 +56,7 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
             color: 'rgba(107,107,107,0.37)',
           },
         },
+
         axisTick: {
           show: false,
         },
@@ -74,6 +70,7 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
             fontSize: 12,
           },
         },
+
         axisLine: {
           lineStyle: {
             color: 'rgba(107,107,107,0.37)',
@@ -87,12 +84,62 @@ const DailyBarChart: FC<DailyBarChartProps> = (props) => {
         },
       },
     ],
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        label: {
+          show: true,
+          backgroundColor: '#fff',
+          color: '#556677',
+          borderColor: 'rgba(0,0,0,0)',
+          shadowColor: 'rgba(0,0,0,0)',
+          shadowOffsetY: 0,
+        },
+        lineStyle: {
+          width: 0,
+        },
+      },
+      backgroundColor: '#fff',
+      textStyle: {
+        color: '#5c6c7c',
+      },
+      padding: [10, 10],
+      extraCssText: 'box-shadow: 1px 0 2px 0 rgba(163,163,163,0.5)',
+    },
     series: [
       {
         type: 'bar',
         data: [
-          40, 80, 20, 21, 40, 40, 12, 43, 12, 32, 40, 80, 20, 21, 40, 40, 12,
-          43, 12, 32, 40, 80, 20, 21, 40, 40, 12, 43, 12, 32,
+          40,
+          80,
+          20,
+          21,
+          40,
+          40,
+          12,
+          43,
+          12,
+          32,
+          40,
+          80,
+          20,
+          21,
+          40,
+          40,
+          12,
+          43,
+          12,
+          32,
+          40,
+          80,
+          20,
+          21,
+          40,
+          40,
+          12,
+          43,
+          12,
+          32,
         ],
         barWidth: '10px',
         itemStyle: {

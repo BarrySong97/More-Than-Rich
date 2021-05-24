@@ -29,9 +29,11 @@
     "classnames": "^2.3.1",
     "echarts": "^5.1.1",
     "echarts-for-react": "^3.0.1",
+    "mockjs": "^1.1.0",
     "umi": "^3.4.14"
   },
   "devDependencies": {
+    "@types/mockjs": "^1.0.3",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/test": "^3.4.14",
