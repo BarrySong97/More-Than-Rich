@@ -1,3 +1,4 @@
+import { ForwardOutlined } from '@ant-design/icons';
 import {
   Button,
   Col,
@@ -28,23 +29,14 @@ const AddEntryForm: FC<AddEntryFormProps> = (props) => {
       >
         <Row gutter={[10, 16]}>
           <Col span={24}>
-            <Form.Item
-              name="comment"
-              label="备注"
-              style={{ width: '100%' }}
-              rules={[{ required: true, message: '请输入用户名!' }]}
-            >
+            <Form.Item name="comment" label="备注" style={{ width: '100%' }}>
               <Input size="middle" placeholder="#吃晚饭 去吃了小龙虾" />
             </Form.Item>
           </Col>
           <Col>
-            <Row gutter={[6, 16]}>
+            <Row gutter={[7, 16]}>
               <Col>
-                <Form.Item
-                  label="金额"
-                  name="amount"
-                  rules={[{ required: true, message: '请输入用户名!' }]}
-                >
+                <Form.Item label="金额" name="amount">
                   <InputNumber min={1} max={10} defaultValue={3} />
                 </Form.Item>
               </Col>
@@ -70,7 +62,7 @@ const AddEntryForm: FC<AddEntryFormProps> = (props) => {
               <Col>
                 <Form.Item name="comment">
                   <Button type="primary" htmlType="submit">
-                    登录
+                    添加
                   </Button>
                 </Form.Item>
               </Col>
