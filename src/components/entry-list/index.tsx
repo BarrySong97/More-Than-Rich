@@ -7,7 +7,7 @@ const columns = [
   {
     title: '创建时间',
     dataIndex: 'createDate',
-    align: 'center',
+    align: 'left',
   },
   {
     title: '金额',
@@ -79,6 +79,20 @@ const data = [
     transfer: ['支付宝', '吃饭'],
     tag: '小龙虾',
   },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
 ];
 
 const EntryList: FC<SimpleEntryListProps> = (props) => {
@@ -86,7 +100,7 @@ const EntryList: FC<SimpleEntryListProps> = (props) => {
     <div className={styles.simpleEntryList}>
       <Table
         pagination={false}
-        title={() => '报表统计'}
+        title={() => <h3>报表统计</h3>}
         columns={columns}
         dataSource={data}
       />

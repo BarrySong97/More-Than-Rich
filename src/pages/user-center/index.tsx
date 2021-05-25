@@ -5,7 +5,7 @@ import DailyBarChart from './components/daily-bar-chart';
 import Info from './components/info';
 import EntryList from '@/components/entry-list';
 import { Col, Row } from 'antd';
-
+import UpDownList from '@/components/up-down-list';
 interface UserCenterProps {}
 
 const UserCenter: FC<UserCenterProps> = (props) => {
@@ -24,7 +24,7 @@ const UserCenter: FC<UserCenterProps> = (props) => {
           <EntryList />
         </Col>
         <Col span={12}>
-          <EntryList />
+          <UpDownList />
         </Col>
       </Row>
     </PageWrapper>
