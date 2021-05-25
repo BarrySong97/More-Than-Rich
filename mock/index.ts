@@ -8,4 +8,10 @@ export default {
       { date: '@datetime(`MM-dd`)', expenses: '@natural(0, 100)' },
     ],
   }),
+  'GET /api/entries': mockjs.mock({
+    msg: 'success',
+    'content|1-30': [
+      { date: '@datetime(`MM-dd`)', expenses: '@natural(0, 100)' },
+    ],
+  }),
 };
