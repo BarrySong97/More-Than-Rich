@@ -1,34 +1,99 @@
 import { ArrowDownOutlined } from '@ant-design/icons';
-import { List, Statistic } from 'antd';
+import { List, Statistic, Table } from 'antd';
 import React, { FC } from 'react';
 import styles from './index.less';
+import SimpleTextItem from '../simple-text-Item';
 export interface UpDownListProps {}
-const listData = [];
-for (let i = 0; i < 5; i++) {
-  listData.push({
-    href: 'https://ant.design',
-    title: `诺安混合成长`,
-  });
-}
+const columns = [
+  {
+    title: '名称',
+    dataIndex: 'name',
+    align: 'left',
+    render: () => (
+      <SimpleTextItem main={'鹏华匠心精选混合C'} second={'001210'} />
+    ),
+  },
+  {
+    title: '最新估值',
+    dataIndex: 'estimate',
+    align: 'center',
+    render: () => <SimpleTextItem main={'1.0939'} second={'test'} />,
+  },
+  {
+    title: '基金净值',
+    dataIndex: 'pure',
+    align: 'center',
+    render: () => <SimpleTextItem main={'3.6143'} second={'2010 - 10 - 17'} />,
+  },
+  {
+    title: '持有金额',
+    dataIndex: 'number',
+    align: 'center',
+    render: () => <SimpleTextItem main={'10000'} />,
+  },
+  {
+    title: '持有收益',
+    dataIndex: 'earn',
+    align: 'center',
+    render: () => (
+      <SimpleTextItem main={'鹏华匠心精选混合C'} second={'001210'} />
+    ),
+  },
+];
+
+const data = [
+  {
+    key: '1',
+    createDate: '2010-10-17',
+    number: 80,
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+  {
+    key: '1',
+    number: 80,
+    createDate: '2010-10-17',
+    transfer: ['支付宝', '吃饭'],
+    tag: '小龙虾',
+  },
+];
+
 const UpDownList: FC<UpDownListProps> = (props) => {
   return (
     <div className={styles.upDownList}>
-      <h3>投资</h3>
-      <List
-        dataSource={listData}
-        renderItem={(item) => (
-          <div key={item.id}>
-            <a href="https://ant.design">{item.title}</a>
-
-            <Statistic
-              value={9.3}
-              precision={1}
-              valueStyle={{ color: '#cf1322', fontSize: 14 }}
-              prefix={<ArrowDownOutlined />}
-              suffix="%"
-            />
-          </div>
-        )}
+      <Table
+        pagination={false}
+        title={() => <h3>基金</h3>}
+        columns={columns}
+        dataSource={data}
       />
     </div>
   );
